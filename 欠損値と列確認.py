@@ -2,7 +2,7 @@ import pandas as pd
 
 #これはexcel用で確認するだけのコード
 
-file_path=r"C:\Users\81805\Documents\train.xlsx"#パスを入れるとこ
+file_path=r.xlsx"#パスを入れるとこ
 df=pd.read_excel(file_path)#dfを作成
 
 print('==========df.info=============================')#確認
