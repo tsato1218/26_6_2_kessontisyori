@@ -1,22 +1,20 @@
 import pandas as pd
 
-#これはexcel用で確認するだけのコード
+#これは確認するだけのコード
 
-file_path=r.xlsx"#パスを入れるとこ
-df=pd.read_excel(file_path)#dfを作成
+file_path=r".csv"#パスを入れるとこ
+df=pd.read_csv(file_path)#dfを作成
 
 print('==========df.info=============================')#確認
 df.info()
-
 col_count = df.shape[1]
-
-print(f"列数: {col_count}")
 
 if col_count >= 20:
     print("!!!!!!!!!!!!!!!!!!!!!!!列が多いかもしれない!!!!!!!!!!!!!!!!!!!!!!!!!")
 
 print('==========欠損値の割合======================')#10%付近超えてたら見に行く
-print(f'{df.isna().mean() * 100}')
+missing_rate = df.isna().mean() * 100
+print(missing_rate[missing_rate >= 10].sort_values(ascending=False))
 
 for i in df.columns:
     if df[i].dtype== object:#もっと簡単な奴があるらしいぞ.select_dtypes(include=["object", "category", "string"]).columns
