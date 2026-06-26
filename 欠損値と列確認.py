@@ -1,6 +1,6 @@
 import pandas as pd
 
-#これは確認するだけのコード
+#これは確認するだけのコード列多いと使えない
 
 file_path=r".csv"#パスを入れるとこ
 df=pd.read_csv(file_path)#dfを作成
